@@ -45,12 +45,12 @@ public void setUp() {
         calcButton.click();
 
         WebElement floorCablePowResult = driver.findElement(By.id("floor_cable_power"));
-        Assert.assertEquals(floorCablePowResult.getAttribute(), "21" );
+        Assert.assertEquals(floorCablePowResult.getAttribute(""), "21" );
 
         //Cannot find Element to check the result
 
         WebElement specCablePowResult = driver.findElement(By.id("spec_floor_cable_power"));
-        Assert.assertEquals(specCablePowResult.getAttribute("), "0");
+        Assert.assertEquals(specCablePowResult.getAttribute("0"), "0");
 
     }
 
