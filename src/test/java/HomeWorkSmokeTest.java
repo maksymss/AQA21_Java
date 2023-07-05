@@ -25,8 +25,6 @@ public void setUp() {
         WebElement heatingLossesInput = driver.findElement(By.id("el_f_losses"));
         WebElement calcButton = driver.findElement(By.name("button"));
 
-
-
         WebElement selectWebElementOne = driver.findElement(By.id("room_type"));
         Select selectRoomType = new Select(selectWebElementOne);
 
@@ -45,12 +43,10 @@ public void setUp() {
         calcButton.click();
 
         WebElement floorCablePowResult = driver.findElement(By.id("floor_cable_power"));
-        Assert.assertEquals(floorCablePowResult.getAttribute(""), "21" );
-
-        //Cannot find Element to check the result
+        Assert.assertEquals(floorCablePowResult.getAttribute("value"), "21" );
 
         WebElement specCablePowResult = driver.findElement(By.id("spec_floor_cable_power"));
-        Assert.assertEquals(specCablePowResult.getAttribute("0"), "0");
+        Assert.assertEquals(specCablePowResult.getAttribute("value"), "0");
 
     }
 
