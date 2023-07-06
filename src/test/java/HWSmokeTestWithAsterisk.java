@@ -49,11 +49,13 @@ public class HWSmokeTestWithAsterisk {
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        WebElement laminateRequiredResult = driver.findElement(By.className("calc-result"));
-        Assert.assertEquals(laminateRequiredResult.getAttribute("value"), "53");
 
-        WebElement numLaminateRequiredResult = driver.findElement(By.className("calc-result"));
-        Assert.assertEquals(numLaminateRequiredResult.getAttribute("value"), "7");
+        WebElement laminateRequiredResult = driver.findElement(By.xpath("//span[contains(text(), '53')]"));
+        Assert.assertEquals("53", laminateRequiredResult.getText());
+
+        WebElement numLaminateRequiredResult = driver.findElement(By.xpath("//span[contains(text(), '7')]"));
+        Assert.assertEquals("7", numLaminateRequiredResult.getText());
+
 
 
     }
