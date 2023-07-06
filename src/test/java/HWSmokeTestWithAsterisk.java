@@ -18,7 +18,7 @@ public class HWSmokeTestWithAsterisk {
     public void setUp() {
         BrowserFactory browserFactory = new BrowserFactory();
         driver = browserFactory.getDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
     }
 
@@ -47,15 +47,13 @@ public class HWSmokeTestWithAsterisk {
         laminateWidthInput.sendKeys("200");
         calcButton.click();
 
-
-
-
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         WebElement laminateRequiredResult = driver.findElement(By.className("calc-result"));
-        Assert.assertEquals(laminateRequiredResult.getText(), "53");
+        Assert.assertEquals(laminateRequiredResult.getAttribute("value"), "53");
 
         WebElement numLaminateRequiredResult = driver.findElement(By.className("calc-result"));
-        Assert.assertEquals(numLaminateRequiredResult.getText(), "7");
+        Assert.assertEquals(numLaminateRequiredResult.getAttribute("value"), "7");
 
 
     }
