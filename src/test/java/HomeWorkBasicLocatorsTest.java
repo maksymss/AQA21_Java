@@ -1,16 +1,14 @@
 import factory.BrowserFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utils.configuration.ReadProperties;
 
-import java.util.List;
+import java.util.concurrent.TimeUnit;
 
-public class BasicLocatorsTest {
+public class HomeWorkBasicLocatorsTest {
     protected WebDriver driver;
 
     @BeforeMethod
@@ -20,32 +18,31 @@ public class BasicLocatorsTest {
     }
 
     @Test
-    public void basicLocatorsTest_1() {
+    public void HomeWorkBasicLocatorsTest_1() {
         driver.get(ReadProperties.getUrl());
 
+        // Six locators used, some of them I used twice for the test structure.
+
         //Find element by ID
-        driver.findElement(By.id("name")).sendKeys(ReadProperties.username());
+        driver.findElement(By.id("username")).sendKeys(ReadProperties.username());
+        driver.findElement(By.id("loginButton")).click();
 
         //Find element by name
         driver.findElement(By.name("password")).sendKeys(ReadProperties.password());
 
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
         //Find element by Tag
-        driver.findElement(By.tagName("button")).click();
-
-    }
-
-    @Test
-    public void basicLocatorsTest_2() {
-        driver.get(ReadProperties.getUrl());
+        driver.findElement(By.tagName("label")).isDisplayed();
 
         //Find element by LinkText
-        driver.findElement(By.linkText("Forgot your password?")).click();
+        driver.findElement(By.linkText("Forgot password?")).click();
 
         //Find element by ClassName
-        driver.findElement(By.name("forgot_passwordpage-request-cancel")).click();
+        driver.findElement(By.className("ForgotPasswordForm")).isDisplayed();
 
         //Find element by PartialLinkText
-        driver.findElement(By.partialLinkText("your password?")).click();
+        driver.findElement(By.partialLinkText("Priv")).isDisplayed();
 
     }
 
@@ -53,5 +50,4 @@ public class BasicLocatorsTest {
     public void tearDown() {
         driver.quit();
     }
-
 }
