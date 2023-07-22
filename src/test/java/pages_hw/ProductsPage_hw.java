@@ -10,7 +10,7 @@ public class ProductsPage_hw extends BasePage_hw {
     private final static String pagePath = "/inventory.html";
 
     //Locators description for elements
-    private final By headerTitleLocator = By.xpath("//*[@id='header_container']/div[2]/span");
+    private final By headerTitleLocator = By.className("title");
     private final By addToCartButtonLocator = By.id("add-to-cart-sauce-labs-bike-light");
     private final By shoppingCartLocator = By.id("shopping_cart_container");
 
