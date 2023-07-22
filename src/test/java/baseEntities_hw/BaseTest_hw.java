@@ -1,16 +1,14 @@
-package baseEntities;
+package baseEntities_hw;
 
 import factory.BrowserFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import steps.LoginStep;
 import utils.configuration.ReadProperties;
 
-public class BaseTest {
+public class BaseTest_hw {
     protected WebDriver driver;
-
-    protected LoginStep loginStep;
 
     @BeforeMethod
     public void setUp() {
@@ -18,11 +16,10 @@ public class BaseTest {
         driver = browserFactory.getDriver();
 
         driver.get(ReadProperties.getUrl());
-
-        loginStep = new LoginStep(driver);
     }
     @AfterMethod
     public void tearDown() {
         driver.quit();
     }
+
 }
