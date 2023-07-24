@@ -17,7 +17,7 @@ public class BaseTest {
         BrowserFactory browserFactory = new BrowserFactory();
         driver = browserFactory.getDriver();
 
-        driver.get(ReadProperties.getUrl());
+        //driver.get(ReadProperties.getUrl());
 
         loginStep = new LoginStep(driver);
     }

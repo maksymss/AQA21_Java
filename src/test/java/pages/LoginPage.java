@@ -4,7 +4,11 @@ import baseEntities.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.configuration.ReadProperties;
+
+import java.time.Duration;
 
 public class LoginPage extends BasePage {
 
@@ -22,6 +26,7 @@ public class LoginPage extends BasePage {
     public LoginPage(WebDriver driver) {
         super(driver);
 
+
     }
 
     @Override
@@ -33,7 +38,7 @@ public class LoginPage extends BasePage {
     //Block unit methods (specific methods)
 
     public WebElement getEmailInput() {
-        return driver.findElement(emailInputLocator);
+        return waitService.waitForExist(emailInputLocator);
     }
 
     public WebElement getPswInput() {
