@@ -19,7 +19,7 @@ public class BaseTest {
 
         //driver.get(ReadProperties.getUrl());
 
-        loginStep = new LoginStep(driver);
+        //loginStep = new LoginStep(driver);
     }
     @AfterMethod
     public void tearDown() {

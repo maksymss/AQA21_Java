@@ -22,19 +22,26 @@ public class ActionTests extends BaseTest {
         List<WebElement> targetElements = waitService.waitAllVisibleElementsLocatedBy(By.className("figure"));
 
         actions
-                .moveToElement(targetElements.get(0))
-                .click(waitService.waitForVisibilityLocatedBy(By.cssSelector("[href='/users/1']")))
+                .moveToElement(targetElements.get(0), 10, 10)
+                .click(waitService.waitForVisibilityLocatedBy(By.cssSelector("[href='/user/1']")))
                 .build()
                 .perform();
         Assert.assertTrue(waitService.waitForElementInvisible(targetElements.get(0)));
     }
     @Test
-    public void uploadFileTest() {
+    public void uploadFileTest() throws InterruptedException {
         driver.get("http://the-internet.herokuapp.com/upload");
 
         WaitService waitService = new WaitService(driver);
 
         WebElement fileUploadElement = waitService.waitForExist(By.xpath("//form/input[@type='file']"));
-        String pathToFile =
+        String pathToFile = ActionTests.class.getClassLoader().getResource("Screenshot 2023-07-24 at 2.53.01 PM.png").getPath();
+        System.out.println(pathToFile);
+        fileUploadElement.sendKeys(pathToFile);
+
+        waitService.waitForVisibilityLocatedBy(By.id("file-submit")).submit();
+
+        Thread.sleep(5000);
+
     }
 }

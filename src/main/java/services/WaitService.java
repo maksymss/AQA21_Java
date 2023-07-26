@@ -40,6 +40,7 @@ public class WaitService {
     public Boolean waitForElementInvisible(WebElement element) {
         return wait.until(ExpectedConditions.invisibilityOf(element));
     }
+
     public WebElement fluentWaitForElement(By locator) {
         Wait<WebDriver> fluent = new FluentWait<>(driver)
                 .withTimeout(Duration.ofSeconds(30))
