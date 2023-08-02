@@ -28,3 +28,5 @@ W
 'src/main/java/services/WaitService.java,9/b/9b4fd1e6c6497fe8bc19934ed97a01469943293d
 R
 "src/test/java/tests/FrameTest.java,9/6/96984255d74fe93d21a6f4b4b79ac6a626bef35d
+X
+(src/test/java/baseEntities/BaseTest.java,f/1/f14c3408c5cf50af22e5e4521ced66e0645d8da8
