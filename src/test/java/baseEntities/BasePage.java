@@ -6,6 +6,7 @@ import services.WaitService;
 import utils.configuration.ReadProperties;
 
 public abstract class BasePage {
+    private static final int WAIT_FOR_PAGE_LOADED_IN_SECONDS = 30;
     protected WebDriver driver;
     protected WaitService waitService;
 
@@ -21,4 +22,6 @@ public abstract class BasePage {
     public boolean isPageOpened() {
         return driver.findElement(getPageIdentifier()).isDisplayed();
     }
+
+
 }
