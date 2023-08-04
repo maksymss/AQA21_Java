@@ -1,6 +1,8 @@
 package pages;
 
 import baseEntities.BasePage;
+import elements.Button;
+import elements.UIElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -37,16 +39,17 @@ public class LoginPage extends BasePage {
 
     //Block unit methods (specific methods)
 
-    public WebElement getEmailInput() {
-        return waitService.waitForExist(emailInputLocator);
+    public UIElement getEmailInput() {
+        return new UIElement(driver, emailInputLocator);
+
     }
 
     public WebElement getPswInput() {
         return driver.findElement(pswInputLocator);
     }
 
-    public WebElement getLogInButton() {
-        return driver.findElement(logInButtonLocator);
+    public Button getLogIn() {
+        return new Button(driver, logInButtonLocator);
     }
 
     public WebElement getErrorTextElement() {
@@ -67,7 +70,7 @@ public class LoginPage extends BasePage {
     public void login(String username, String password) {
         setEmail(username);
         getPswInput().sendKeys(ReadProperties.password());
-        getLogInButton().click();
+        getLogIn().click();
     }
 
 }
