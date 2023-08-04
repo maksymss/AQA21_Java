@@ -1,7 +1,6 @@
 package pages;
 
 import baseEntities.BasePage;
-import elements.Table;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -35,9 +34,6 @@ public class ProjectsPage extends BasePage {
         return driver.findElement(headerTitleLabelLocator);
     }
 
-    public Table getProjectsTable() {
-        return new Table(driver,projectsTableLocator );
-    }
 
     //Block complex methods
 
