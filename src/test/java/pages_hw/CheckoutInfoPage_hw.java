@@ -4,6 +4,7 @@ import baseEntities_hw.BasePage_hw;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import utils.configuration.ReadProperties;
 
 public class CheckoutInfoPage_hw extends BasePage_hw {
@@ -11,11 +12,16 @@ public class CheckoutInfoPage_hw extends BasePage_hw {
     private final static String pagePath = "/inventory.html";
 
     //Locators description for elements
-    private final By headerCheckoutInfoLocator = By.xpath("//*[@id='header_container']/div[2]/span");
-    private final By firstNameInputLocator = By.id("first-name");
-    private final By lastNameInputLocator = By.id("last-name");
-    private final By zipCodeInputLocator = By.id("postal-code");
-    private final By submitLocator = By.id("continue");
+    @FindBy (xpath = "//*[@id='header_container']/div[2]/span")
+    public WebElement headerCheckoutInfo;
+    @FindBy (id = "first-name")
+    public WebElement firstNameInput;
+    @FindBy (id = "last-name")
+    public WebElement lastNameInput;
+    @FindBy (id = "postal-code")
+    public WebElement zipCodeInput;
+    @FindBy (id = "continue")
+    public WebElement submit;
 
     //Initialization block
     public CheckoutInfoPage_hw(WebDriver driver) {
@@ -26,22 +32,8 @@ public class CheckoutInfoPage_hw extends BasePage_hw {
     }
     @Override
     protected By getPageIdentifier() {
-        return submitLocator;
+        return By.id("continue");
     }
     //Unit methods block
-    public WebElement getHeaderCheckoutInfo() {
-        return driver.findElement(headerCheckoutInfoLocator);
-    }
-    public WebElement getFirstNameInput() {
-        return driver.findElement(firstNameInputLocator);
-    }
-    public WebElement getLastNameInput() {
-        return driver.findElement(lastNameInputLocator);
-    }
-    public WebElement getZipCodeInput() {
-        return driver.findElement(zipCodeInputLocator);
-    }
-    public WebElement getSubmit() {
-        return driver.findElement(submitLocator);
-    }
+
 }

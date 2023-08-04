@@ -4,6 +4,7 @@ import baseEntities_hw.BasePage_hw;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import utils.configuration.ReadProperties;
 
 public class CheckoutCompletePage_hw extends BasePage_hw {
@@ -11,9 +12,12 @@ public class CheckoutCompletePage_hw extends BasePage_hw {
     private final static String pagePath = "/checkout-complete.html";
 
     //Locators description for elements
-    private final By headerCheckoutCompleteTitleLocator = By.xpath("//*[@id='header_container']/div[2]/span");
-    private final By thanYouMessageLocator = By.className("complete-header");
-    private final By backHomeButtonLocator = By.id("back-to-products");
+    @FindBy (xpath = "//*[@id='header_container']/div[2]/span")
+    public WebElement headerCheckoutCompleteTitle;
+    @FindBy (className = "complete-header")
+    public WebElement thanYouMessage;
+    @FindBy (id = "back-to-products")
+    public WebElement backHomeButton;
 
     //Initialization block
     public CheckoutCompletePage_hw(WebDriver driver) {
@@ -25,19 +29,9 @@ public class CheckoutCompletePage_hw extends BasePage_hw {
     }
     @Override
     protected By getPageIdentifier() {
-        return backHomeButtonLocator;
+        return By.id("back-to-products");
     }
 
     //Unit methods block
-    public WebElement getHeaderCheckoutCompleteTitle() {
-        return driver.findElement(headerCheckoutCompleteTitleLocator);
-    }
 
-    public WebElement getThanYouMessage() {
-        return driver.findElement(thanYouMessageLocator);
-    }
-
-    public WebElement getBackHomeButton() {
-        return driver.findElement(backHomeButtonLocator);
-    }
 }

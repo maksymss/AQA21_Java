@@ -4,6 +4,7 @@ import baseEntities_hw.BasePage_hw;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import utils.configuration.ReadProperties;
 
 public class ShoppingCartPage_hw extends BasePage_hw {
@@ -11,8 +12,10 @@ public class ShoppingCartPage_hw extends BasePage_hw {
     private final static String pagePath = "/cart.html";
 
     //Locators description for elements
-    private final By headerShoppingCartTitleLocator = By.xpath("//*[@id='header_container']/div[2]/span");
-    private final By checkoutButtonLocator = By.id("checkout");
+    @FindBy (xpath = "//*[@id='header_container']/div[2]/span")
+    public WebElement headerShoppingCartTitle;
+    @FindBy (id = "checkout")
+    public WebElement checkoutButton;
 
     //Initialization block
     public ShoppingCartPage_hw(WebDriver driver) {
@@ -24,15 +27,9 @@ public class ShoppingCartPage_hw extends BasePage_hw {
 
     @Override
     protected By getPageIdentifier() {
-        return checkoutButtonLocator;
+        return By.id("checkout");
     }
 
     //Unit methods block
-    public WebElement getHeaderShoppingCartTitle() {
-        return driver.findElement(headerShoppingCartTitleLocator);
-    }
 
-    public WebElement getCheckoutButton() {
-        return driver.findElement(checkoutButtonLocator);
-    }
 }
