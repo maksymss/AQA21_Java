@@ -33,11 +33,11 @@ public class ProductsPage_hw extends BasePage_hw {
         return driver.findElement(headerTitleLocator);
     }
 
-    public WebElement getAddToCartLocator() {
+    public WebElement getAddToCart() {
         return driver.findElement(addToCartButtonLocator);
     }
 
-    public WebElement getShoppingCartLocator() {
+    public WebElement getShoppingCart() {
         return driver.findElement(shoppingCartLocator);
     }
 

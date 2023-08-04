@@ -19,8 +19,8 @@ public class EndToEndHomeWorkTest extends BaseTest_hw {
     @Test(dependsOnMethods = "successLoginTest")
     public void successAddToCartTest() {
         productsPage_hw.getHeaderTitle().isDisplayed();
-        productsPage_hw.getAddToCartLocator().click();
-        productsPage_hw.getShoppingCartLocator().click();
+        productsPage_hw.getAddToCart().click();
+        productsPage_hw.getShoppingCart().click();
         Assert.assertTrue(new ShoppingCartPage_hw(driver).isPageOpened());
     }
     @Test(dependsOnMethods = "successAddToCartTest")
@@ -55,4 +55,4 @@ public class EndToEndHomeWorkTest extends BaseTest_hw {
         checkoutCompletePage_hw.getBackHomeButton().click();
         Assert.assertTrue(new ProductsPage_hw(driver).isPageOpened());
     }
-}
+}}
