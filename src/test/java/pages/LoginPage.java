@@ -11,7 +11,7 @@ public class LoginPage extends BasePage {
     //Block describing locators for element
     private final By emailInputLocator = By.id("name");
     private final By pswInputLocator = By.id("password");
-    private final By logInButtonLocator = By.id("button_primary");
+    private static final By logInButtonLocator = By.id("button_primary");
     private final By errorTextLocator = By.className("error-text");
     private final By errorFieldTextLocator = By.className("loginpage-message");
 
@@ -19,7 +19,7 @@ public class LoginPage extends BasePage {
 
     //Initialization block
 
-    public LoginPage(WebDriver driver) {
+    public LoginPage(WebDriver driver) throws InterruptedException {
         super(driver);
 
     }

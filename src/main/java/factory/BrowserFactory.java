@@ -36,9 +36,8 @@ public class BrowserFactory {
    }
 
     public WebDriver getDriver() {
+       driver.manage().timeouts().implicitlyWait(Duration.ofMillis(0));
        driver.manage().window().maximize();
-
-
        driver.manage().deleteAllCookies();
        return this.driver;
     }
