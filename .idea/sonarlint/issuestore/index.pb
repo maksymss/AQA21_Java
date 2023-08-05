@@ -4,13 +4,9 @@ K
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
-R
-"src/test/java/steps/LoginStep.java,4/a/4ab330b0addce2080784d6974333a35c9700393a
 V
 &src/test/java/pages/DashboardPage.java,0/7/0777c14d8abef7f0ae528a2e33d417f91202b87a
 T
 $src/test/java/pages/TopMenuPage.java,f/1/f134ca22de7cc9fba4af553610de8f879c1f19b6
 U
 %src/test/java/pages/SideMenuPage.java,a/2/a296fe0fc645a8083d4347f27494b9bdaf96eda2
-U
-%src/test/java/tests/TestCaseTest.java,d/e/deaa25f9ed268879682dcb17afdd8688b779735e

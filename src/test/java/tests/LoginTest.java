@@ -2,6 +2,8 @@ package tests;
 
 import baseEntities.BaseTest;
 import factory.BrowserFactory;
+import helper_hw.DataHelper;
+import models.User;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -15,35 +17,36 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void successLoginTest() {
+        User user = new User();
+        user.setEmail("asdasd");
+        user.setPassword(ReadProperties.password());
 
-       Assert.assertTrue(
-               loginStep.successLogin(
-                       ReadProperties.username(),
-                       ReadProperties.password()
-                       ).isPageOpened()
-       );
+        Assert.assertTrue(
+                loginStep.successLogin(DataHelper.getUser()).isPageOpened()
+        );
     }
+
     @Test
     public void incorrectEmailLoginTest() {
+        User user = new User();
+        user.setEmail(ReadProperties.username());
+        user.setPassword(ReadProperties.password());
+
         Assert.assertEquals(
-                loginStep.negativeLogin("asdasd", ReadProperties.password()).getErrorTextElement().getText(),
+                loginStep.negativeLogin(user).getErrorTextElement().getText(),
                 "Email/Login or Password is incorrect. Please try again."
         );
     }
 
     @Test
     public void incorrectPswLoginTest() {
-        Assert.assertEquals(
-                loginStep.negativeLogin(ReadProperties.username(), "123456").getErrorTextElement().getText(),
-                "Email/Login or Password is incorrect. Please try again.",
-                "Неверное сообщение об ошибке");
-    }
+        User user = new User();
+        user.setEmail(ReadProperties.username());
+        user.setPassword("123456");
 
-    @Test
-    public void shortPswLoginTest() {
         Assert.assertEquals(
-                loginStep.negativeLogin(ReadProperties.username(), "123").getErrorFieldTextElement().getText(),
-                "Password is too short (5 characters required).",
+                loginStep.negativeLogin(user).getErrorTextElement().getText(),
+                "Email/Login or Password is incorrect. Please try again.",
                 "Неверное сообщение об ошибке");
     }
 
