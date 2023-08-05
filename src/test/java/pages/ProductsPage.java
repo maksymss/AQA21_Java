@@ -1,13 +1,12 @@
-package pages_hw;
+package pages;
 
-import baseEntities_hw.BasePage_hw;
+import baseEntities.BasePage_hw;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import utils.configuration.ReadProperties;
 
-public class ProductsPage_hw extends BasePage_hw {
+public class ProductsPage extends BasePage_hw {
     private final static String pagePath = "/inventory.html";
 
     //Locators description for elements
@@ -19,7 +18,7 @@ public class ProductsPage_hw extends BasePage_hw {
     public WebElement shoppingCart;
 
     //Initialization block
-    public ProductsPage_hw(WebDriver driver) {
+    public ProductsPage(WebDriver driver) {
         super(driver);
     }
 

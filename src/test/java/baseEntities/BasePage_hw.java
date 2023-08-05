@@ -1,4 +1,4 @@
-package baseEntities_hw;
+package baseEntities;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
