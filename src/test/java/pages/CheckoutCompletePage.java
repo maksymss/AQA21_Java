@@ -1,13 +1,12 @@
-package pages_hw;
+package pages;
 
-import baseEntities_hw.BasePage_hw;
+import baseEntities.BasePage_hw;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import utils.configuration.ReadProperties;
 
-public class CheckoutCompletePage_hw extends BasePage_hw {
+public class CheckoutCompletePage extends BasePage_hw {
 
     private final static String pagePath = "/checkout-complete.html";
 
@@ -20,7 +19,7 @@ public class CheckoutCompletePage_hw extends BasePage_hw {
     public WebElement backHomeButton;
 
     //Initialization block
-    public CheckoutCompletePage_hw(WebDriver driver) {
+    public CheckoutCompletePage(WebDriver driver) {
         super(driver);
     }
 

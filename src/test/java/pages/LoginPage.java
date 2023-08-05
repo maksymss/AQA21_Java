@@ -1,16 +1,14 @@
-package pages_hw;
+package pages;
 
-import baseEntities_hw.BasePage_hw;
+import baseEntities.BasePage_hw;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import utils.configuration.ReadProperties;
 
 import static utils.configuration.ReadProperties.password;
-import static utils.configuration.ReadProperties.username;
 
-public class LoginPage_hw extends BasePage_hw {
+public class LoginPage extends BasePage_hw {
 
     //Locators description for elements
     @FindBy (id = "user-name")
@@ -22,7 +20,7 @@ public class LoginPage_hw extends BasePage_hw {
 
     //Initialization block
 
-    public LoginPage_hw(WebDriver driver) {
+    public LoginPage(WebDriver driver) {
         super(driver);
     }
 

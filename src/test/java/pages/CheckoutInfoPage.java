@@ -1,13 +1,12 @@
-package pages_hw;
+package pages;
 
-import baseEntities_hw.BasePage_hw;
+import baseEntities.BasePage_hw;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import utils.configuration.ReadProperties;
 
-public class CheckoutInfoPage_hw extends BasePage_hw {
+public class CheckoutInfoPage extends BasePage_hw {
 
     private final static String pagePath = "/inventory.html";
 
@@ -24,7 +23,7 @@ public class CheckoutInfoPage_hw extends BasePage_hw {
     public WebElement submit;
 
     //Initialization block
-    public CheckoutInfoPage_hw(WebDriver driver) {
+    public CheckoutInfoPage(WebDriver driver) {
         super(driver);
     }
     public void openPageByUrl() {
