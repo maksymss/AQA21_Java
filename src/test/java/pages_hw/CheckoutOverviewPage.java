@@ -1,13 +1,11 @@
 package pages_hw;
 
 import baseEntities_hw.BasePage_hw;
-import baseEntities_hw.BaseTest_hw;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import utils.configuration.ReadProperties;
 
-public class CheckoutOverviewPage_hw extends BasePage_hw {
+public class CheckoutOverviewPage extends BasePage_hw {
 
     private final static String pagePath = "/checkout-step-two.html";
 
@@ -16,7 +14,7 @@ public class CheckoutOverviewPage_hw extends BasePage_hw {
     private final By finishCheckoutButtonLocator = By.id("finish");
 
     //Initialization block
-    public CheckoutOverviewPage_hw(WebDriver driver) {
+    public CheckoutOverviewPage(WebDriver driver) {
         super(driver);
     }
     public void openPageByUrl() {
@@ -34,5 +32,10 @@ public class CheckoutOverviewPage_hw extends BasePage_hw {
 
     public WebElement getFinishCheckoutButton() {
         return driver.findElement(finishCheckoutButtonLocator);
+    }
+
+    public CheckoutCompletePage clickFinishCheckout() {
+        getFinishCheckoutButton().click();
+        return new CheckoutCompletePage(driver);
     }
 }

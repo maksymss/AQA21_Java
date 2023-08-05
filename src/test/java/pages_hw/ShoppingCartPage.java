@@ -4,9 +4,8 @@ import baseEntities_hw.BasePage_hw;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import utils.configuration.ReadProperties;
 
-public class ShoppingCartPage_hw extends BasePage_hw {
+public class ShoppingCartPage extends BasePage_hw {
 
     private final static String pagePath = "/cart.html";
 
@@ -15,7 +14,7 @@ public class ShoppingCartPage_hw extends BasePage_hw {
     private final By checkoutButtonLocator = By.id("checkout");
 
     //Initialization block
-    public ShoppingCartPage_hw(WebDriver driver) {
+    public ShoppingCartPage(WebDriver driver) {
         super(driver);
     }
     public void openPageByUrl() {
@@ -34,5 +33,10 @@ public class ShoppingCartPage_hw extends BasePage_hw {
 
     public WebElement getCheckoutButton() {
         return driver.findElement(checkoutButtonLocator);
+    }
+
+    public CheckoutInfoPage clickCheckout() {
+        getCheckoutButton().click();
+        return new CheckoutInfoPage(driver);
     }
 }

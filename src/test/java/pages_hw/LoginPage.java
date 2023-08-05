@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import utils.configuration.ReadProperties;
 
-public class LoginPage_hw extends BasePage_hw {
+public class LoginPage extends BasePage_hw {
 
     //Locators description for elements
     private final By emailInputLocator = By.id("user-name");
@@ -15,7 +15,7 @@ public class LoginPage_hw extends BasePage_hw {
 
     //Initialization block
 
-    public LoginPage_hw(WebDriver driver) {
+    public LoginPage(WebDriver driver) {
         super(driver);
     }
 
@@ -37,8 +37,19 @@ public class LoginPage_hw extends BasePage_hw {
         return driver.findElement(logInButtonLocator);
     }
 
-    public void setEmail(String value) {
+    public LoginPage setEmail(String value) {
         getEmailInput().sendKeys(value);
+        return this;
+    }
+
+    public LoginPage setPassword(String password) {
+        getPasswordInput().sendKeys(password);
+        return this;
+    }
+
+    public ProductsPage clickLogIn() {
+        getLogInButton().click();
+        return new ProductsPage(driver);
     }
 
 
@@ -49,5 +60,5 @@ public class LoginPage_hw extends BasePage_hw {
         getLogInButton().click();
     }
 
+    }
 
-}

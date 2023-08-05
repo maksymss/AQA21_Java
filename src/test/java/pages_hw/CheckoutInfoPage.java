@@ -4,9 +4,8 @@ import baseEntities_hw.BasePage_hw;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import utils.configuration.ReadProperties;
 
-public class CheckoutInfoPage_hw extends BasePage_hw {
+public class CheckoutInfoPage extends BasePage_hw {
 
     private final static String pagePath = "/inventory.html";
 
@@ -18,30 +17,59 @@ public class CheckoutInfoPage_hw extends BasePage_hw {
     private final By submitLocator = By.id("continue");
 
     //Initialization block
-    public CheckoutInfoPage_hw(WebDriver driver) {
+    public CheckoutInfoPage(WebDriver driver) {
         super(driver);
     }
+
     public void openPageByUrl() {
         super.openPageByUrl(pagePath);
     }
+
     @Override
     protected By getPageIdentifier() {
         return submitLocator;
     }
+
     //Unit methods block
     public WebElement getHeaderCheckoutInfo() {
         return driver.findElement(headerCheckoutInfoLocator);
     }
+
     public WebElement getFirstNameInput() {
         return driver.findElement(firstNameInputLocator);
     }
+
     public WebElement getLastNameInput() {
         return driver.findElement(lastNameInputLocator);
     }
+
     public WebElement getZipCodeInput() {
         return driver.findElement(zipCodeInputLocator);
     }
+
     public WebElement getSubmit() {
         return driver.findElement(submitLocator);
     }
+
+    public CheckoutInfoPage getFirstName() {
+        getFirstNameInput().sendKeys("Maksym");
+        return this;
+    }
+
+    public CheckoutInfoPage geLastName() {
+        getLastNameInput().sendKeys("Sudarikov");
+        return this;
+    }
+
+    public CheckoutInfoPage getZipCode() {
+        getZipCodeInput().sendKeys("12345");
+        return this;
+    }
+
+    public CheckoutOverviewPage clickSubmit() {
+        getSubmit().click();
+        return new CheckoutOverviewPage(driver);
+    }
+
+
 }
