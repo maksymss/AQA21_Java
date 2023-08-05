@@ -2,12 +2,16 @@ package baseEntities;
 
 import factory.BrowserFactory;
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import pages.*;
+import steps.LoginStep;
 import utils.configuration.ReadProperties;
 
-public class BaseTest_hw {
+@Listeners(InvokedListener.class)
+public class BaseTest {
     protected WebDriver driver;
     protected LoginPage loginPage_;
     protected ProductsPage productsPage_;
@@ -17,9 +21,12 @@ public class BaseTest_hw {
     protected CheckoutCompletePage checkoutCompletePage_;
 
     @BeforeClass
-    public void setUp() {
+    public void setUp(ITestContext iTestContext ) {
         BrowserFactory browserFactory = new BrowserFactory();
         driver = browserFactory.getDriver();
+        this.setDriverToContext(iTestContext, driver);
+
+        //driver.get(ReadProperties.getUrl());
 
         loginPage_ = new LoginPage(driver);
         productsPage_ = new ProductsPage(driver);
@@ -29,8 +36,12 @@ public class BaseTest_hw {
         checkoutCompletePage_ = new CheckoutCompletePage(driver);
 
         driver.get(ReadProperties.getUrl());
-
     }
+
+    public static void setDriverToContext(ITestContext iTestContext, WebDriver driver){
+        iTestContext.setAttribute("WebDriver", driver);
+    }
+
     @AfterClass
     public void tearDown() {
         driver.quit();

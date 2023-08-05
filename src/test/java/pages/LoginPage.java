@@ -1,6 +1,6 @@
 package pages;
 
-import baseEntities.BasePage_hw;
+import baseEntities.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 import static utils.configuration.ReadProperties.password;
 
-public class LoginPage extends BasePage_hw {
+public class LoginPage extends BasePage {
 
     //Locators description for elements
     @FindBy (id = "user-name")

@@ -1,12 +1,12 @@
 package pages;
 
-import baseEntities.BasePage_hw;
+import baseEntities.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ProductsPage extends BasePage_hw {
+public class ProductsPage extends BasePage {
     private final static String pagePath = "/inventory.html";
 
     //Locators description for elements
