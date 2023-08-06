@@ -10,3 +10,13 @@ T
 $src/test/java/pages/TopMenuPage.java,f/1/f134ca22de7cc9fba4af553610de8f879c1f19b6
 U
 %src/test/java/pages/SideMenuPage.java,a/2/a296fe0fc645a8083d4347f27494b9bdaf96eda2
+X
+(src/test/java/baseEntities/BasePage.java,2/b/2b6a0466b906351175dd1ae506f3c8045ee69f09
+X
+(src/test/java/baseEntities/BaseStep.java,7/1/71ee7d3bda7b978564e093dc52c38e6e1bfd317f
+R
+"src/test/java/pages/LoginPage.java,2/f/2febc867dad266b12f3cf09596e572e0dcf37dbf
+R
+"src/test/java/steps/LoginStep.java,4/a/4ab330b0addce2080784d6974333a35c9700393a
+X
+(src/test/java/baseEntities/BaseTest.java,f/1/f14c3408c5cf50af22e5e4521ced66e0645d8da8
