@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import pages.*;
 import utils.configuration.ReadProperties;
 
-public class BaseTest_hw {
+public class BaseTest {
     protected WebDriver driver;
     protected LoginPage loginPage_;
     protected ProductsPage productsPage_;

@@ -1,12 +1,12 @@
 package tests;
 
-import baseEntities.BaseTest_hw;
+import baseEntities.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
 import utils.configuration.ReadProperties;
 
-public class EndToEndHomeWorkTest extends BaseTest_hw {
+public class EndToEndHomeWorkTest extends BaseTest {
 
     @Test
     public void successLoginTest() {
