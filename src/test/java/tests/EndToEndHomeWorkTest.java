@@ -1,6 +1,7 @@
 package tests;
 
 import baseEntities.BaseTest;
+import models.Project;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
@@ -55,5 +56,21 @@ public class EndToEndHomeWorkTest extends BaseTest {
         checkoutCompletePage_.thanYouMessage.isDisplayed();
         checkoutCompletePage_.backHomeButton.click();
         Assert.assertTrue(new ProductsPage(driver).isPageOpened());
+    }
+
+    @Test
+    public void builderTest() {
+        Project project = new Project.Builder()
+                .withUsername("standard_user")
+                .withPassword("secret_sauce")
+                .withAddProduct(true)
+                .withShoppingCart(true)
+                .withCheckout(true)
+                .withFirstName("Maksym")
+                .withLastName("Sudarikov")
+                .withZipCode("12345")
+
+                .build();
+
     }
 }

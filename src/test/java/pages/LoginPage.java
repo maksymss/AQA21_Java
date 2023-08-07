@@ -37,11 +37,6 @@ public class LoginPage extends BasePage {
 
 
     //Complex block methods
-    public void login() {
-        emailInput.sendKeys(password());
-        passwordInput.sendKeys(password());
-        logInButton.click();
-    }
 
 
 }
