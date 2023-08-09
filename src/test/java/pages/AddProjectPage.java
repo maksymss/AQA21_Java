@@ -37,13 +37,7 @@ public class AddProjectPage extends BasePage {
         return driver.findElement(headerTitleLabelLocator);
     }
 
-    public void fillForm(Project project) {
-        setProjectNAme(project.getProjectName());
-        setAnnouncement(project.getAnnouncement());
-        setFlag(project.isFlag());
-        setProjectType(project.getProjectType());
-        setDate(project.getDate());
 
-    }
+
 
 }
