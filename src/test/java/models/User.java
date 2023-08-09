@@ -1,19 +1,26 @@
 package models;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import org.testng.annotations.Test;
 
 import java.util.Objects;
 
-@Getter
-@Setter
-@ToString
+@Data
+@AllArgsConstructor
+@RequiredArgsConstructor
+@NoArgsConstructor
 public class User {
+    @EqualsAndHashCode.Exclude
+    private int id;
+
+    @NonNull
     private String username;
+    @NonNull
     private String password;
     private String email;
+
+    //@ToString.Exclude
     private String code;
+
 
 }
