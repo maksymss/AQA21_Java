@@ -1,11 +1,11 @@
-package pages_hw;
+package pages;
 
-import baseEntities_hw.BasePage_hw;
+import baseEntities.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class CheckoutOverviewPage extends BasePage_hw {
+public class CheckoutOverviewPage extends BasePage {
 
     private final static String pagePath = "/checkout-step-two.html";
 

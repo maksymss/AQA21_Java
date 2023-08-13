@@ -1,11 +1,12 @@
-package pages_hw;
+package pages;
 
-import baseEntities_hw.BasePage_hw;
+import baseEntities.BasePage;
+import models.UserInfo;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class CheckoutInfoPage extends BasePage_hw {
+public class CheckoutInfoPage extends BasePage {
 
     private final static String pagePath = "/inventory.html";
 
@@ -69,6 +70,13 @@ public class CheckoutInfoPage extends BasePage_hw {
     public CheckoutOverviewPage clickSubmit() {
         getSubmit().click();
         return new CheckoutOverviewPage(driver);
+    }
+
+    public void getCheckoutInfo(UserInfo userInfo) {
+        getFirstNameInput().sendKeys(userInfo.getFirstName());
+        getLastNameInput().sendKeys(userInfo.getLastName());
+        getZipCodeInput().sendKeys(userInfo.getZipCode());
+        getSubmit().click();
     }
 
 

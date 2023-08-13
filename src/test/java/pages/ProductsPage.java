@@ -1,11 +1,11 @@
-package pages_hw;
+package pages;
 
-import baseEntities_hw.BasePage_hw;
+import baseEntities.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class ProductsPage extends BasePage_hw {
+public class ProductsPage extends BasePage {
     private final static String pagePath = "/inventory.html";
 
     //Locators description for elements
@@ -49,5 +49,10 @@ public class ProductsPage extends BasePage_hw {
     public ShoppingCartPage clickShoppingCart() {
         getShoppingCart().click();
         return new ShoppingCartPage(driver);
+    }
+
+    public void getProduct() {
+        getAddToCart().click();
+        getShoppingCart().click();
     }
 }

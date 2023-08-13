@@ -1,13 +1,13 @@
-package baseEntities_hw;
+package baseEntities;
 
 import factory.BrowserFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import pages_hw.*;
+import pages.*;
 import utils.configuration.ReadProperties;
 
-public class BaseTest_hw {
+public class BaseTest {
     protected WebDriver driver;
     protected LoginPage loginPage_;
     protected ProductsPage productsPage_;
@@ -35,5 +35,7 @@ public class BaseTest_hw {
     public void tearDown() {
         driver.quit();
     }
+
+
 
 }

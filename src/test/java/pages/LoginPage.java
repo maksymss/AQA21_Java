@@ -1,12 +1,15 @@
-package pages_hw;
+package pages;
 
-import baseEntities_hw.BasePage_hw;
+import baseEntities.BasePage;
+import helpers.DataHelper;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import utils.configuration.ReadProperties;
 
-public class LoginPage extends BasePage_hw {
+public class LoginPage extends BasePage {
 
     //Locators description for elements
     private final By emailInputLocator = By.id("user-name");
@@ -42,23 +45,14 @@ public class LoginPage extends BasePage_hw {
         return this;
     }
 
-    public LoginPage setPassword(String password) {
-        getPasswordInput().sendKeys(password);
-        return this;
-    }
-
-    public ProductsPage clickLogIn() {
-        getLogInButton().click();
-        return new ProductsPage(driver);
-    }
-
 
     //Complex block methods
-    public void login() {
+    public void login(String username, String password) {
         setEmail(ReadProperties.username());
         getPasswordInput().sendKeys(ReadProperties.password());
         getLogInButton().click();
     }
 
-    }
+
+}
 
